@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Products.Models.Product>
+@{
+    ViewBag.Title = "ProductsTable";
+}
+
+<h2>ProductsTable</h2>
+
+<table class="table-bordered">
+
+    <th>Id</th>
+    <th>Name</th>
+    
+
+
+    @{
+        int count = 0;
+        foreach (var el in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@Html.ActionLink(el.Name, "LinkPage","Home",new { id = el.Name },null)</td>
+
+            </tr>
+        }
+    }
+
+</table>
+
