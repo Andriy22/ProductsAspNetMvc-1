@@ -5,12 +5,12 @@ using System.Web;
 
 namespace Products.Models
 {
-    public class Product
+    public class Description
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Link { get; set; }
-        public int IdDescription { get; set; }
 
+        public int IdProduct { get; set; }
+
+        public string Text { get; set; }
     }
 }

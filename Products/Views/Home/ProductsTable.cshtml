@@ -17,12 +17,23 @@
         foreach (var el in Model)
         {
             count++;
-            <tr>
-                <td>@count</td>
-                <td>@Html.ActionLink(el.Name, "LinkPage","Home",new { id = el.Name },null)</td>
+    <tr>
+        <td>@count</td>
+        <td>@Html.ActionLink(el.Name, "LinkPage", "Home", new { id = el.Name }, null)</td>
+        <td>@Html.ActionLink("Dscription", "LinkDescription", "Home", new { id = el.Name }, new {@class= "btn btn-primary" })</td>
 
-            </tr>
+
+    </tr>
+    
         }
+    <tr>
+
+
+        <td>@count</td>
+        <td>@Html.ActionLink("Dich", "LinkPage", "Home", new { id = 3 }, null)</td>
+        <td>@Html.ActionLink("Dscription", "LinkDescription", "Home", new { id = 3 }, new { @class = "btn btn-primary" })</td>
+
+    </tr>
     }
 
 </table>

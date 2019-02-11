@@ -36,10 +36,25 @@ namespace Products.Controllers
 
         public ActionResult LinkPage(string id)
         {
-
-            return Redirect(ctx.Products.Where(v => v.Name == id).First().Link);
+            if (ctx.Products.Any(x=>x.Name==id))
+                return Redirect(ctx.Products.Where(v => v.Name == id).First().Link);
+            else
+                return HttpNotFound();
 
         }
+
+        public ActionResult LinkDescription(string id)
+        {
+            var desc = ctx.Descriptions.Where(v => v.IdProduct == ctx.Products.Where(c => c.Name == id).FirstOrDefault().Id).FirstOrDefault();
+
+
+            if (desc != null)
+                return Json(desc, JsonRequestBehavior.AllowGet);
+            else
+                return Json("Desc not found", JsonRequestBehavior.AllowGet); 
+
+        }
+   
 
     }
 }
