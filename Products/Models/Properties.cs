@@ -5,13 +5,9 @@ using System.Web;
 
 namespace Products.Models
 {
-    public class Product
+    public class Properties
     {
         public int Id { get; set; }
-        public string Name { get; set; }
         public string Link { get; set; }
-        public IEnumerable<Properties> Properies { get; set; }
-        public int IdDescription { get; set; }
-
     }
 }

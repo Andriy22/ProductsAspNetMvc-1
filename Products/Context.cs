@@ -25,6 +25,8 @@ namespace Products
 
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Description> Descriptions { get; set; }
+        public virtual DbSet<Properties> Properties { get; set; }
+
 
     }
     public class SchoolDBInitializer : DropCreateDatabaseAlways<Context>
