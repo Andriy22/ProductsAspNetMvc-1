@@ -2,6 +2,23 @@
 @{
     ViewBag.Title = "ProductsTable";
 }
+<script type="text/javascript">
+
+
+    function Click(val) {
+        $.ajax({
+            url: `http://localhost:50732/Home/LinkDescription/${val}`,
+            type: "GET",
+            success: function (data) {
+                
+                $('#result').html(`<b>Description: ${data.Text}</b>`)
+            },
+            error: function () {
+                alert("123");
+            }
+        });
+    }
+    </script>
 
 <h2>ProductsTable</h2>
 
@@ -9,7 +26,7 @@
 
     <th>Id</th>
     <th>Name</th>
-    
+
 
 
     @{
@@ -20,21 +37,24 @@
     <tr>
         <td>@count</td>
         <td>@Html.ActionLink(el.Name, "LinkPage", "Home", new { id = el.Name }, null)</td>
-        <td>@Html.ActionLink("Dscription", "LinkDescription", "Home", new { id = el.Name }, new {@class= "btn btn-primary" })</td>
+        <td><button id="desc" class="btn btn-primary" onclick="Click('@el.Name')">Descriptions</button></td>
 
 
     </tr>
-    
+
         }
     <tr>
 
 
         <td>@count</td>
         <td>@Html.ActionLink("Dich", "LinkPage", "Home", new { id = 3 }, null)</td>
-        <td>@Html.ActionLink("Dscription", "LinkDescription", "Home", new { id = 3 }, new { @class = "btn btn-primary" })</td>
+        <td><button id="desc" class="btn btn-primary" onclick="Click('gfhfg')">Descriptions</button></td>
+
 
     </tr>
     }
 
 </table>
+
+<div id="result"></div>
 

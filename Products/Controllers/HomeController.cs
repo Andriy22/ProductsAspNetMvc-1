@@ -42,7 +42,7 @@ namespace Products.Controllers
                 return HttpNotFound();
 
         }
-
+       
         public ActionResult LinkDescription(string id)
         {
             var desc = ctx.Descriptions.Where(v => v.IdProduct == ctx.Products.Where(c => c.Name == id).FirstOrDefault().Id).FirstOrDefault();
@@ -51,7 +51,7 @@ namespace Products.Controllers
             if (desc != null)
                 return Json(desc, JsonRequestBehavior.AllowGet);
             else
-                return Json("Desc not found", JsonRequestBehavior.AllowGet); 
+                return Json(new  { Text= "Not found" }, JsonRequestBehavior.AllowGet); 
 
         }
    
