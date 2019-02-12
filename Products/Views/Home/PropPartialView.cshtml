@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Products.Models.Properties>  
+
+
+
+<div class="container">
+    <ul>
+    @{
+        int count = 0;
+        foreach (var el in Model)
+        {
+            count++;
+            <li>
+                <a href="@el.Link">Link @count</a>   
+                </li>
+        }
+    }
+    </ul >
+</div>
+
+

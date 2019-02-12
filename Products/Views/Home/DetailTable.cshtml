@@ -1,0 +1,31 @@
+﻿@using Products.Models
+@model Context
+
+@{
+    ViewBag.Title = "DetailTable";
+}
+
+<h2>DetailTable</h2>
+
+<table class="table-bordered col-12 table-hover">
+    <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Sources</th>
+
+    </thead>
+    <tbody>
+    @{
+
+        foreach (var el in Model.Products.ToList())
+        {
+        <tr>
+            <td>@Html.Partial("ProductPartialView",el)</td>
+            <td>@Html.Partial("DescPartialView", Model.Descriptions.Where(x=>x.Id== el.IdDescription).First())</td>
+            <td>@Html.Partial("PropPartialView", el.Properties.ToList())</td>
+        </tr>
+        }
+    }
+    </tbody>
+</table>
+

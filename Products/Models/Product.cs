@@ -10,7 +10,7 @@ namespace Products.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Link { get; set; }
-        public IEnumerable<Properties> Properies { get; set; }
+        public IEnumerable<Properties> Properties { get; set; }
         public int IdDescription { get; set; }
 
     }

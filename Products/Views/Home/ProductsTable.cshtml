@@ -22,10 +22,11 @@
 
 <h2>ProductsTable</h2>
 
-<table class="table-bordered">
+<table class="table-bordered col-12">
 
     <th>Id</th>
     <th>Name</th>
+    <th>Description</th>
 
 
 
@@ -34,24 +35,24 @@
         foreach (var el in Model)
         {
             count++;
-    <tr>
-        <td>@count</td>
-        <td>@Html.ActionLink(el.Name, "LinkPage", "Home", new { id = el.Name }, null)</td>
-        <td><button id="desc" class="btn btn-primary" onclick="Click('@el.Name')">Descriptions</button></td>
+            <tr>
+                <td>@count</td>
+                <td>@Html.ActionLink(el.Name, "LinkPage", "Home", new { id = el.Name }, null)</td>
+                <td><button id="desc" class="btn btn-primary" onclick="Click('@el.Name')">Descriptions</button></td>
 
 
-    </tr>
+            </tr>
 
         }
-    <tr>
+        <tr>
 
 
-        <td>@count</td>
-        <td>@Html.ActionLink("Dich", "LinkPage", "Home", new { id = 3 }, null)</td>
-        <td><button id="desc" class="btn btn-primary" onclick="Click('gfhfg')">Descriptions</button></td>
+            <td>@count</td>
+            <td>@Html.ActionLink("Dich", "LinkPage", "Home", new { id = 3 }, null)</td>
+            <td><button id="desc" class="btn btn-primary" onclick="Click('gfhfg')">Descriptions</button></td>
 
 
-    </tr>
+        </tr>
     }
 
 </table>

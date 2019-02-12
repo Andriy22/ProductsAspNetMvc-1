@@ -241,6 +241,10 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\ProductsTable.cshtml" />
+    <Content Include="Views\Home\DetailTable.cshtml" />
+    <Content Include="Views\Home\ProductPartialView.cshtml" />
+    <Content Include="Views\Home\DescPartialView.cshtml" />
+    <Content Include="Views\Home\PropPartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

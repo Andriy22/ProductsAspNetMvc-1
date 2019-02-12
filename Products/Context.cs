@@ -35,14 +35,20 @@ namespace Products
         {
             IList<Product> prs = new List<Product>();
             IList<Description> descs = new List<Description>();
+            IList<Properties> props = new List<Properties>();
 
 
-            prs.Add(new Product() { IdDescription=1,Link= "https://ru.wikipedia.org/wiki/@world_record_egg",Name="Eggs"});
-            descs.Add(new Description() { Id = 1, Text = "Boolshit", IdProduct = 1 });
+            descs.Add(new Description() { Id = 1, Text = "Boolshit", IdProduct = 1,Category = "Food",Price = 34.85});
+            props.Add(new Properties() { Id = 1, Link = "https://www.incredibleegg.org/egg-nutrition/" });
+            props.Add(new Properties() { Id = 2, Link = "https://www.seriouseats.com/recipes/images/2017/08/5708631471_06fed03518_o-1500x1125.jpg" });
+            props.Add(new Properties() { Id = 3, Link = "https://cdn1.medicalnewstoday.com/content/images/articles/323/323001/bowl-full-of-eggs.jpg" });
+
+            prs.Add(new Product() { IdDescription = 1, Link = "https://ru.wikipedia.org/wiki/@world_record_egg", Name = "Eggs",Properties = props});
 
 
             context.Products.AddRange(prs);
             context.Descriptions.AddRange(descs);
+            context.Properties.AddRange(props);
 
 
             base.Seed(context);

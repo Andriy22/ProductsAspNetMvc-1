@@ -33,7 +33,12 @@ namespace Products.Controllers
             return View(ctx.Products);
 
         }
+        public ActionResult DetailTable()
+        {
 
+            return View(ctx);
+
+        }
         public ActionResult LinkPage(string id)
         {
             if (ctx.Products.Any(x=>x.Name==id))
