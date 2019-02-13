@@ -1,9 +1,10 @@
-﻿@model Products.Models.Description
+﻿@model IEnumerable< Products.Models.Description>
 @{
+
 <div class="container">
-    <p style="font-weight: bold"> @Model.Category</p>
-    <p style="font-style: italic"> @Model.Text</p>
-    <p style="font-size: 14pt; color: green;" class="col offset-8 align-self-end">Price: $@Model.Price.ToString() </p>
+    <p style="font-weight: bold"> @Model.First().Category</p>
+    <p style="font-style: italic"> @Model.First().Text</p>
+    <p style="font-size: 14pt; color: green;" class="col offset-8 align-self-end">Price: $@Model.First().Price.ToString() </p>
 </div>                       
   
 }

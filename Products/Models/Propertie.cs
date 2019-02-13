@@ -5,9 +5,10 @@ using System.Web;
 
 namespace Products.Models
 {
-    public class Properties
+    public class Propertie
     {
         public int Id { get; set; }
         public string Link { get; set; }
+        public virtual  Product Product { get; set; }
     }
 }

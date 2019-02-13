@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Products.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -33,10 +34,23 @@ namespace Products.Controllers
             return View(ctx.Products);
 
         }
+        [HttpGet]
         public ActionResult DetailTable()
         {
 
-            return View(ctx);
+            var products = ctx.Products.Include("Descriptions").Include("Properties").ToList();
+            List<DetailTableModel> mymodels = new List<DetailTableModel>();
+            foreach(var el in products)
+            {
+                var model = new DetailTableModel();
+                model.Product = el;
+                model.Descriptions = el.Descriptions.ToList();
+                model.Properties = el.Properties.ToList();
+                mymodels.Add(model);
+            }
+            
+           
+            return View(mymodels);
 
         }
         public ActionResult LinkPage(string id)
@@ -50,12 +64,12 @@ namespace Products.Controllers
        
         public ActionResult LinkDescription(string id)
         {
-            var desc = ctx.Descriptions.Where(v => v.IdProduct == ctx.Products.Where(c => c.Name == id).FirstOrDefault().Id).FirstOrDefault();
+            //var desc = ctx.Descriptions.Where(v => v.IdProduct == ctx.Products.Where(c => c.Name == id).FirstOrDefault().Id).FirstOrDefault();
 
 
-            if (desc != null)
-                return Json(desc, JsonRequestBehavior.AllowGet);
-            else
+           // if (desc != null)
+             //   return Json(desc, JsonRequestBehavior.AllowGet);
+            //else
                 return Json(new  { Text= "Not found" }, JsonRequestBehavior.AllowGet); 
 
         }

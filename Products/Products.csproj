@@ -159,8 +159,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Description.cs" />
+    <Compile Include="Models\DetailTableModel.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Properties.cs" />
+    <Compile Include="Models\Propertie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
